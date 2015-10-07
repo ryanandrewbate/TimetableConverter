@@ -9,7 +9,7 @@ Under "MyTimetable", select the Semester(s) of choice and select "List" as the r
 
 Save the HTML of the resulting page local to the converter, as `input.html` in this instance
 
-Execute the program as `java main input.html output.ics` where `input.html` is the filename for the input HTML file and `output.ics` is the name of the destination iCal file. 
+Execute the program as `java Main input.html output.ics` where `input.html` is the filename for the input HTML file and `output.ics` is the name of the destination iCal file.
 
 The iCal/.ics file can then be imported into Google Calendar, etc.
 
