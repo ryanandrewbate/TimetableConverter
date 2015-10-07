@@ -1,7 +1,7 @@
 # TimetableConverter
 **Converts Scientia 'SWSCUST' HTML List timetables to iCal .ics format.**
 
-*A small project scraped together during a lecture as an excuse to brush up on Java basics. Allows students to convert their Scientia timetable to iCal format for use in Google Calendar or similar modern applications. *
+*A small project scraped together during a lecture as an excuse to brush up on Java basics. Allows students to convert their Scientia timetable to iCal format for use in Google Calendar or similar modern applications.*
 
 ##Usage
 
