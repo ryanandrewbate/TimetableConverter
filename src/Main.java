@@ -1,14 +1,13 @@
 import java.io.*;
 import java.util.ArrayList;
 
-
 public class Main {
 
     private ArrayList<Event> events = new ArrayList<Event>();
     private ArrayList<EventInstance> instances = new ArrayList<EventInstance>();
 
     public static void main(String[] args) throws IOException {
-        Main obj = new Main ();
+        Main obj = new Main();
         // Checks for not null but does not validate file existence nor correct number of variables
         if(args != null){
             String input = args[0];
@@ -32,7 +31,7 @@ public class Main {
 
         String contents = "";
         String line = " ";
-        while (line != null){
+        while (line != null) {
             line = textReader.readLine();
             contents = contents + line;
         }
@@ -40,8 +39,8 @@ public class Main {
         return contents;
     }
 
-    public void createInstances(){
-        for(Event event: events){
+    public void createInstances() {
+        for(Event event: events) {
             for(String date: event.getDates()) {
                 EventInstance instance = new EventInstance(event,date);
                 instances.add(instance);
