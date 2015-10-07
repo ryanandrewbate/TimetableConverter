@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Main obj = new Main();
         // Checks for not null but does not validate file existence nor correct number of variables
-        if(args != null){
+        if (args.length == 2){
             String input = args[0];
             String html = obj.getFileContents(input);
             obj.parseHTML(html);
@@ -18,7 +18,7 @@ public class Main {
             String output = args[1];
             obj.icsOutput(output);
         } else {
-            System.out.println("Invalid input output paths.");
+            System.out.println("Usage: java Main timetable.html timetable.ics");
         }
 
     }
