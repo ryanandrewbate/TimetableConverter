@@ -55,20 +55,25 @@ public class Main {
 
             // Find the next day
             int daystart = input.indexOf("<td>Day</td>", offset);
-            int dayend = input.indexOf("</table>", offset);
-
+            int dayend = input.indexOf("</table>", daystart);
             int offset1 = daystart;
+
+            //System.out.println(input.substring(daystart + 4, dayend));
 
             while (offset1 < dayend) {
                 //Find the next event.
                 //if(input.indexOf("<tr>", offset1) > ){
 
                 //NEEDS SOMETHING TO BREAK LOOP ONCE LAST DAY HAS BEEN PROCESSED
-
+                //System.out.println("dayend is: "+dayend);
                 int eventstart = input.indexOf("<tr>", offset1);
                 int eventend = input.indexOf("</tr>", eventstart);
-                //System.out.println("Eventstart: "+eventstart);
-                //System.out.println(eventend);
+
+                if(eventend > dayend){
+                  break;
+                }
+                //System.out.println("eventstart is now:"+eventstart);
+                //System.out.println("eventend is now:"+eventend);
 
                 int offset2 = eventstart;
                 ArrayList<String> eventdata = new ArrayList<String>();
@@ -78,13 +83,15 @@ public class Main {
                     int datastart = input.indexOf("<td>", offset2);
                     int dataend = input.indexOf("</td>", offset2);
                     offset2 = dataend + 5;
-                    //System.out.println(input.substring(datastart + 4, dataend));
+                    System.out.println(input.substring(datastart + 4, dataend));
                     eventdata.add(input.substring(datastart + 4, dataend));
                 }
                 // Create an event for this event.
                 events.add(new Event(eventdata));
 
                 offset1 = eventend + 5;
+
+                //System.out.println("offset1 is now:"+offset1);
             }
 
             offset = dayend + 5;

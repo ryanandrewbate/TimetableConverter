@@ -23,6 +23,7 @@ public class Event {
     }*/
 
     public Event(ArrayList<String> data){
+        System.out.println(data.get(1));
         loc = data.get(6);
         name = data.get(3).substring(5,8)+" "+data.get(5);
         desc = data.get(4)+" "+data.get(3)+" "+data.get(7);
